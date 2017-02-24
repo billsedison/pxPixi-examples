@@ -1,3 +1,9 @@
+## Description
+
+This project is a port of the pixi examples (http://pixijs.github.io/examples/) to run on pxscene.  This involves the primary modifications for pixi.js and pxscene found here:
+
+https://github.com/topcoderinc/pxPixi
+
 ## Prerequisites
 - Node.js v6.5+ with npm (https://nodejs.org)
 
