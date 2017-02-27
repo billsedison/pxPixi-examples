@@ -25,3 +25,16 @@ git commit -m "init"
 heroku create
 git push heroku master
 ```
+
+## Heroku examples
+
+- Basic: http://pxscene-pixi-examples.herokuapp.com/basics/basic.js
+- Container: http://pxscene-pixi-examples.herokuapp.com/basics/container.js
+- Container Pivot: http://pxscene-pixi-examples.herokuapp.com/basics/container-pivot.js
+- Spritesheet Animation: http://pxscene-pixi-examples.herokuapp.com/basics/spritesheet.js
+- Click: http://pxscene-pixi-examples.herokuapp.com/basics/click.js
+- Tiling Sprite: http://pxscene-pixi-examples.herokuapp.com/basics/tiling-sprite.js
+- Text: http://pxscene-pixi-examples.herokuapp.com/basics/text.js
+- Textured Mesh: http://pxscene-pixi-examples.herokuapp.com/basics/textured-mesh.js
+- Graphics: http://pxscene-pixi-examples.herokuapp.com/basics/graphics.js
+- Render Texture: http://pxscene-pixi-examples.herokuapp.com/basics/render-texture.js
