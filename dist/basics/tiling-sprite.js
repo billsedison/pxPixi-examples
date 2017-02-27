@@ -1,4 +1,4 @@
-const ASSET_URL = 'http://pxscene-pixi-dev.herokuapp.com/';
+const ASSET_URL = 'https://pxscene-pixi-js-tc-bill.herokuapp.com';
 const PIXI_PATH = ASSET_URL + '/pixi/';
 const IMAGE_PATH = ASSET_URL + '/assets/p2.jpeg';
 
@@ -36,5 +36,6 @@ px.import({ scene: 'px:scene.1.js',
     });
 
 }).catch( function importFailed(err){
-  console.error("Import for basic.js failed: ", err)
+  console.error("Import failed: ", err);
 });
+

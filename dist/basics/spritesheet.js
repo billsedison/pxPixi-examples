@@ -1,39 +1,32 @@
-const ASSET_URL = 'http://pxscene-pixi-dev.herokuapp.com/';
+const ASSET_URL = 'https://pxscene-pixi-js-tc-bill.herokuapp.com';
 const PIXI_PATH = ASSET_URL + '/pixi/';
 const FIGHTER_IMAGE_PATH = ASSET_URL + '/assets/basic/fighter.json';
 
 px.configImport({"pxFramework:": PIXI_PATH});
 px.import({ scene: 'px:scene.1.js',
-            pixi: 'pxFramework:pixi.min.js',
-            fs: 'fs',
-            http: 'http',
-            url: 'url',
-}).then( function ready(imports) {
+            pixi: 'pxFramework:pixi.js' }).then( function ready(imports) {
 
   var scene = imports.scene;
   var app = new PIXI.Application(800, 600, {view: scene});
-  var fs = imports.fs;
-  var http = imports.http;
-  var url = imports.url;
 
   PIXI.loader
-      .add(FIGHTER_IMAGE_PATH, fs, http, url)
+      .initAppSceneContext(module.appSceneContext)
+      .add(FIGHTER_IMAGE_PATH)
       .load(onAssetsLoaded);
 
-  function onAssetsLoaded(err, data)
+  function onAssetsLoaded()
   {
       // create an array of textures from an image path
       var frames = [];
 
       for (var i = 0; i < 30; i++) {
           var val = i < 10 ? '0' + i : i;
-  // magically works since the spritesheet was loaded with the pixi loader
-          var framesData = data.meta.frames;
-          frames.push(framesData['rollSequence00' + val + '.png']);
-      }
 
+          // magically works since the spritesheet was loaded with the pixi loader
+          frames.push(PIXI.Texture.fromFrame('rollSequence00' + val + '.png'));
+      }
       // create an AnimatedSprite (brings back memories from the days of Flash, right ?)
-      var anim = new PIXI.extras.AnimatedSpriteV8(data.texture, frames);
+      var anim = new PIXI.extras.AnimatedSprite(frames);
 
       /*
        * An AnimatedSprite inherits all the properties of a PIXI sprite
@@ -53,6 +46,7 @@ px.import({ scene: 'px:scene.1.js',
       });
   }
 
-}).catch( function importFailed(err){
-  console.error("Import for basic.js failed: ", err)
+}).catch( function importFailed(err) {
+  console.error("Import failed: ", err);
 });
+

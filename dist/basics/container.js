@@ -1,10 +1,10 @@
-const ASSET_URL = 'http://pxscene-pixi-dev.herokuapp.com/';
+const ASSET_URL = 'https://pxscene-pixi-js-tc-bill.herokuapp.com';
 const PIXI_PATH = ASSET_URL + '/pixi/';
 const BUNNY_IMAGE_PATH = ASSET_URL + '/assets/basic/bunny.png';
 
 px.configImport({"pxFramework:": PIXI_PATH});
 px.import({ scene: 'px:scene.1.js',
-            pixi: 'pxFramework:pixi.min.js' }).then( function ready(imports) {
+            pixi: 'pxFramework:pixi.js' }).then( function ready(imports) {
 
   var scene = imports.scene;
   var app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb, view: scene});
@@ -29,5 +29,5 @@ px.import({ scene: 'px:scene.1.js',
   container.y = (app.renderer.height - container.height) / 2;
 
 }).catch( function importFailed(err){
-  console.error("Import for basic.js failed: ", err)
+  console.error("Import failed: ", err);
 });

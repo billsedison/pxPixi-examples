@@ -1,4 +1,4 @@
-const ASSET_URL = 'http://pxscene-pixi-dev.herokuapp.com/';
+const ASSET_URL = 'https://pxscene-pixi-js-tc-bill.herokuapp.com';
 const PIXI_PATH = ASSET_URL + '/pixi/';
 
 px.configImport({"pxFramework:": PIXI_PATH});
@@ -40,5 +40,5 @@ px.import({ scene: 'px:scene.1.js',
     app.stage.addChild(richText);
 
 }).catch( function importFailed(err){
-  console.error("Import for basic.js failed: ", err)
+  console.error("Import failed: ", err);
 });
