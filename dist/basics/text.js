@@ -1,4 +1,4 @@
-const ASSET_URL = 'https://pxscene-pixi-js-tc-bill.herokuapp.com';
+const ASSET_URL = 'http://pxscene-pixi-dev.herokuapp.com';
 const PIXI_PATH = ASSET_URL + '/pixi/';
 
 px.configImport({"pxFramework:": PIXI_PATH});
